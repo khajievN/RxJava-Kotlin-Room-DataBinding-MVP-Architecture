@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinRxArchitecture</string>
+    <string name="main_news">News</string>
+</resources>
