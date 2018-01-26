@@ -8,7 +8,6 @@ import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import com.nizzle94.cleankotlinrxarchitecture.R
 import com.nizzle94.cleankotlinrxarchitecture.adapter.NewsAdapter
-import com.nizzle94.cleankotlinrxarchitecture.api.result.NewsResult
 import com.nizzle94.cleankotlinrxarchitecture.model.News
 import com.nizzle94.cleankotlinrxarchitecture.ui.base.BaseActivity
 import dagger.Lazy

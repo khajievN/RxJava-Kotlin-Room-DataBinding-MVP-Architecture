@@ -5,6 +5,7 @@ import com.nizzle94.cleankotlinrxarchitecture.database.dao.NewsDao
 import com.nizzle94.cleankotlinrxarchitecture.model.News
 import com.nizzle94.cleankotlinrxarchitecture.mvp.Presenter
 import io.reactivex.Observable
+import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -20,9 +21,7 @@ class MainPresenter(var newsApi: NewsApi, var newsDao: NewsDao) : Presenter<Main
             .subscribeOn(Schedulers.computation())
             .observeOn(Schedulers.computation())
             .toObservable()
-            .flatMap { idList ->
-                Observable.just(idList)
-            }
+            .flatMap { list -> Observable.just(list) }
             .observeOn(AndroidSchedulers.mainThread())
 
         val networkResource = newsApi.getTopHeadlines()
@@ -47,6 +46,7 @@ class MainPresenter(var newsApi: NewsApi, var newsDao: NewsDao) : Presenter<Main
                 }
                 list
             }
+            .toObservable()
             .observeOn(AndroidSchedulers.mainThread())
 
         getView()?.showProgress()

@@ -4,7 +4,6 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import com.nizzle94.cleankotlinrxarchitecture.R
-import com.nizzle94.cleankotlinrxarchitecture.api.result.NewsResult
 import com.nizzle94.cleankotlinrxarchitecture.databinding.NewsItemBinding
 import com.nizzle94.cleankotlinrxarchitecture.model.News
 import com.nizzle94.cleankotlinrxarchitecture.utils.bind

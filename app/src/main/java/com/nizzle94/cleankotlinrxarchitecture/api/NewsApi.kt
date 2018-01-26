@@ -2,6 +2,7 @@ package com.nizzle94.cleankotlinrxarchitecture.api
 
 import com.nizzle94.cleankotlinrxarchitecture.api.result.BaseResult
 import io.reactivex.Observable
+import io.reactivex.Single
 import retrofit2.http.GET
 
 /**
@@ -10,6 +11,6 @@ import retrofit2.http.GET
 interface NewsApi {
 
     @GET("/v2/top-headlines?country=us")
-    fun getTopHeadlines(): Observable<BaseResult>
+    fun getTopHeadlines(): Single<BaseResult>
 
 }
