@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager
 import com.nizzle94.cleankotlinrxarchitecture.R
 import com.nizzle94.cleankotlinrxarchitecture.adapter.NewsAdapter
 import com.nizzle94.cleankotlinrxarchitecture.api.result.NewsResult
+import com.nizzle94.cleankotlinrxarchitecture.model.News
 import com.nizzle94.cleankotlinrxarchitecture.ui.base.BaseActivity
 import dagger.Lazy
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,7 +22,7 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView,
         presenter.loadTopHeadlines()
     }
 
-    override fun onSuccessData(newsList: List<NewsResult>) {
+    override fun onSuccessData(newsList: List<News>) {
         newsAdapter?.setData(newsList)
     }
 
@@ -49,7 +50,7 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView,
     @Inject
     lateinit var presenterProvider: Lazy<MainPresenter>
     private var newsAdapter: NewsAdapter? = null
-    private val newsList = ArrayList<NewsResult>()
+    private val newsList = ArrayList<News>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

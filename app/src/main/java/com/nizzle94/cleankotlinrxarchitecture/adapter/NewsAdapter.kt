@@ -6,18 +6,19 @@ import android.view.ViewGroup
 import com.nizzle94.cleankotlinrxarchitecture.R
 import com.nizzle94.cleankotlinrxarchitecture.api.result.NewsResult
 import com.nizzle94.cleankotlinrxarchitecture.databinding.NewsItemBinding
+import com.nizzle94.cleankotlinrxarchitecture.model.News
 import com.nizzle94.cleankotlinrxarchitecture.utils.bind
 
 /**
  * Created by Khajiev Nizomjon on 23/01/2018.
  */
 class NewsAdapter(
-    var newsList: MutableList<NewsResult>,
-    var clickListener: (NewsResult) -> Unit
+    var newsList: MutableList<News>,
+    var clickListener: (News) -> Unit
 ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
 
-    fun setData(list: List<NewsResult>) {
+    fun setData(list: List<News>) {
         if (!newsList.isEmpty()) {
             newsList.clear()
         }
@@ -40,7 +41,7 @@ class NewsAdapter(
 
 
     class NewsViewHolder(private val binding: NewsItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(news: NewsResult, listener: (NewsResult) -> Unit) {
+        fun bind(news: News, listener: (News) -> Unit) {
             binding.news = news
             binding.root.setOnClickListener { listener(news) }
         }

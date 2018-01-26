@@ -1,6 +1,7 @@
 package com.nizzle94.cleankotlinrxarchitecture.di
 
 import com.nizzle94.cleankotlinrxarchitecture.api.NewsApi
+import com.nizzle94.cleankotlinrxarchitecture.database.dao.NewsDao
 import com.nizzle94.cleankotlinrxarchitecture.ui.main.MainPresenter
 import dagger.Module
 import dagger.Provides
@@ -12,6 +13,6 @@ import dagger.Provides
 class PresenterModule {
 
     @Provides
-    fun provideMainPresenter(newsApi: NewsApi) =  MainPresenter(newsApi)
+    fun provideMainPresenter(newsApi: NewsApi, newsDao: NewsDao) = MainPresenter(newsApi, newsDao)
 
 }

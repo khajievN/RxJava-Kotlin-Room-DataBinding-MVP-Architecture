@@ -1,6 +1,7 @@
 package com.nizzle94.cleankotlinrxarchitecture.ui.main
 
 import com.nizzle94.cleankotlinrxarchitecture.api.result.NewsResult
+import com.nizzle94.cleankotlinrxarchitecture.model.News
 import com.nizzle94.cleankotlinrxarchitecture.mvp.BaseView
 
 /**
@@ -8,7 +9,7 @@ import com.nizzle94.cleankotlinrxarchitecture.mvp.BaseView
  */
 interface MainView : BaseView {
 
-    fun onSuccessData(newsList: List<NewsResult>)
+    fun onSuccessData(newsList: List<News>)
 
     fun onErrorData()
 

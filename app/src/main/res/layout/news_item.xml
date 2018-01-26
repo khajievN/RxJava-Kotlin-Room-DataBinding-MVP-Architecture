@@ -7,7 +7,7 @@
 
         <variable
             name="news"
-            type="com.nizzle94.cleankotlinrxarchitecture.api.result.NewsResult" />
+            type="com.nizzle94.cleankotlinrxarchitecture.model.News" />
 
 
     </data>
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
-            app:formatServerDate="@{news.date}"
+            app:formatServerDate="@{news.publishedAt}"
             tools:text="2014 kwqje 123"
             android:textColor="#000"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -50,7 +50,6 @@
             android:src="@drawable/news_placeholder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:imageUrl="@{news.urlToImage}"
             app:layout_constraintTop_toBottomOf="@+id/publishedAt" />
 
         <TextView
